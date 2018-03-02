@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <div id="app">
+        <h1>{{ nome + idade }}</h1> <!-- interpola as duas propreidades -->
+        <h1>{{ idade }}</h1>
+        <input type="text" v-on:input="alteraNome"> <!-- directivas é o que está dentro da tag passando alguns parametros por exemplo <img href> o href é a directiva-->
+        <a v-bind:href="hiperlink">hacks</a> <!-- v-bind serve para utilizar a propriedade que está dentro da data-->
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                nome: "ola ponchinha",
+                idade: 12,
+                hiperlink: 'https://www.google.com'
+            },
+            methods: {
+                alteraNome: function(event){
+                    //this.nome='lul' //propriendade this serve para buscar "nome" à propriedade "data".
+                    this.nome=event.target.value
+                }
+            }
+        })
+    </script>
+</body>
+</html>

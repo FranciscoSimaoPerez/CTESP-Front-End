@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <div id="exercicio">
+        <!-- Preencha a tag <p> com o seu nome e idade usando interpolação -->
+        <p>{{ nome  + ' ' + idade }}</p>
+        <!--  calcule a idade multiplicada  -->
+        <p>{{ triplicaIdade() }}</p>
+        <p>{{ idade * 3 }}</p>
+        <!-- Use uma function para calcular um float aleatório entre 0 e 1 (Math.random()) -->
+        <p>{{ 'numero random ' + numeroRandom() }}</p>
+        <!-- 4 procure uma imagem no google e coloque em "src" -->
+        <img style="width:100px; height:100px" v-bind:src=imageLink>
+        <!-- Pre-preencha o input com o seu nome ("value" atribute) -->
+        <input type="text" v-bind:value=nome>
+    </div>
+    
+    <script>
+        new Vue({
+            el: '#exercicio',
+            data: {
+                nome: "Francisco",
+                idade: 23,
+                hiperlink: 'https://www.google.com',
+                imageLink: 'https://i.ytimg.com/vi/t4pkol6oKEM/maxresdefault.jpg'
+            },
+            methods: {
+                triplicaIdade: function(){
+                    return this.idade * 3
+                },
+                numeroRandom: function(){
+                    return Math.random()
+                }
+            }
+        })
+    </script>
+</body>
+</html>
