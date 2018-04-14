@@ -1,11 +1,36 @@
 <template>
   <div>
-    <nuxt/>
+    <the-header />
+    <main class="main-content">
+      <nuxt/>
+    </main>
   </div>
 </template>
 
+<script>
+import TheHeader from '@/components/TheHeader/TheHeader'
+
+export default {
+  components: {
+    TheHeader
+  }
+}
+</script>
+
 <style>
-html
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.main-content {
+  margin-top: 4.5rem;
+}
+
+/*html
 {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
@@ -49,5 +74,5 @@ html
 {
   color: #fff;
   background-color: #35495e;
-}
+}*/
 </style>
