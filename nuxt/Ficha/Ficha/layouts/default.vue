@@ -1,6 +1,7 @@
 <template>
   <div>
-    <the-header />
+    <The-header @sideNavToggle="displaySideNav = !displaySidenav" />
+    <TheSideNav :show="displaySideNav" @close="displaySideNav=false" />
     <main class="main-content">
       <nuxt/>
     </main>
@@ -8,12 +9,20 @@
 </template>
 
 <script>
-  import TheHeader from '@/components/TheHeader/TheHeader'
+  //import navbar from "~/components/navbar.vue"
+  import TheHeader from '@/components/TheHeader/TheHeader.vue';
+  import TheSideNav from "@/components/TheSideNav/TheSideNav.vue";
 
   export default {
     components: {
-      TheHeader
-    }
+      TheHeader,
+      TheSideNav
+    },
+    data() {
+      return{
+        displaySideNav: false
+      }
+    },
   }
 </script>
 

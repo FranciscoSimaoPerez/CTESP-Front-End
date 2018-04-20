@@ -6,8 +6,23 @@
                 <nuxt-link to="/about" tag="li" class="nav-link"><a>About</a></nuxt-link>
             </ul>
         </nav>
+        <TheSideNavToggle @toggle="$emit('sideNavToggle')"/>
     </header>
 </template>
+
+<script>
+    import Logo from "~/components/Logo.vue";
+    import TheSideNavToggle from "@/components/TheSideNavToggle/TheSideNavToggle";
+
+    export default {
+        name: "TheHeader",
+        components: {
+            Logo,
+            TheSideNavToggle
+        },
+    }
+
+</script>
 
 <style scoped>
     .main-header{
