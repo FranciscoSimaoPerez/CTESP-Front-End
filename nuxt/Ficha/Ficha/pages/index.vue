@@ -1,16 +1,55 @@
 <template>
-    <header class="main-header">
+    <!-- <header class="main-header">
         <nav class="main-nav">
             <ul class="nav-links">
                 <nuxt-link to="/" tag="li" class="nav-link"><a>All Posts</a></nuxt-link>
                 <nuxt-link to="/about" tag="li" class="nav-link"><a>About</a></nuxt-link>
             </ul>
         </nav>
-    </header>
-    
+    </header> -->
+    <div class="app">
+        <app-ficha-produto v-for="(artigo, index) in artigos"
+                           :key="index"
+                           :produto="artigo.produto"
+                           :valor="artigo.valor" />
+    </div>
 </template>
 
+<script>
+    import appFichaProduto from '@/components/app-ficha-produto/app-ficha-produto';
+    export default {
+        components:{
+            appFichaProduto
+        },
+        data(){
+            return {
+                artigos: [
+                    {
+                        produto:"Produto XYZ",
+                        valor: 25
+                    },
+                    {
+                        produto:"Produto XPTO",
+                        valor: 5
+                    },
+                    {
+                        produto:"Produto GTO",
+                        valor: 15
+                    }
+                ]
+            }
+        }
+    }
+</script>
+
 <style scoped>
+    .app{
+        margin-top: 4.5rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    /*
     .main-header{
         position: fixed;
         top: 0;
@@ -58,4 +97,5 @@
     .nav-link.nuxt-link-exact-active {
         border-bottom: 3px solid #06c4d1;
     }
+    */
 </style>

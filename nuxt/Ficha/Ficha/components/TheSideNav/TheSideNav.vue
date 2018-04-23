@@ -25,8 +25,12 @@
     };
 </script>
 
-<style>
-    .slide-side-enter-active,
+
+
+
+
+<style scoped>
+     .slide-side-enter-active,
     .slide-side-leave-active {
         transition: all 0.3s ease-out;
     }
@@ -35,9 +39,6 @@
     .slide-side-leave-to {
         transform: translateX(-100%);
     }
-</style>
-
-<style scoped>
     .sidenav-container {
         height:100%;
         width:100%;
@@ -55,7 +56,7 @@
         height: 100%;
         width: 300px;
         background-color: white;
-         z-index: 1000;
+         z-index: 10000;
         position: fixed;
         top: 0; 
         left: 0;
