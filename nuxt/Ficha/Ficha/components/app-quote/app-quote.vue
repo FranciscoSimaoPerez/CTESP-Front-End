@@ -4,13 +4,13 @@
     </div>    
 </template>
 
-<style>
+<style scoped>
     div {
         background-color: white;
         box-shadow: 0 0 24px rgba(0, 0, 0, 0.3);
         padding: 3rem;
         width: 420px;
-        position: relative;
+        margin:5px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
