@@ -16,29 +16,22 @@
 </template>
 
 <script>
+    import axios from 'axios';
     import appFichaProduto from '@/components/app-ficha-produto/app-ficha-produto';
     export default {
         components:{
             appFichaProduto
         },
-        data(){
-            return {
-                artigos: [
-                    {
-                        produto:"Produto XYZ",
-                        valor: 25
-                    },
-                    {
-                        produto:"Produto XPTO",
-                        valor: 5
-                    },
-                    {
-                        produto:"Produto GTO",
-                        valor: 15
-                    }
-                ]
-            }
-        }
+        asyncData(){
+            return axios.get('https://umaartigos-c50bd.firebaseio.com/.json')
+                .then((res) => {
+                    return { artigos: res.data }
+                })
+        },
+        // async asyncData(){
+        //     let { data } = await axios.get('https://umaartigos-c50bd.firebaseio.com/')
+        //     return { artigos: data }
+        // },
     }
 </script>
 
