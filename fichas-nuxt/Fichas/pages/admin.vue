@@ -13,8 +13,9 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
-    deta (){
+    data (){
         return {
             novoProduto:{
                 produto:'',
@@ -26,6 +27,7 @@ export default {
     methods:{
         submeterFormulario(){
             //console.log(this.novoProduto)
+            return axios.post('https://umaartigos-c50bd.firebaseio.com/.json', this.novoProduto);
         }
     }
 }
@@ -56,5 +58,26 @@ export default {
     .button:active {
         color: #fff;
         background-color: #06c4d1;
+    }
+    .input-control {
+        margin: 10px 0;
+    }
+    .input-control label{
+        display: block;
+        font-weight: bold;
+        color: #06c4d1;
+    }
+    .input-control input{
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        font: inherit;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 5px;
+    }
+    .input-control input:focus{
+        background-color: #eee;
+        outline: none;
     }
 </style>
